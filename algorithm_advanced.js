@@ -26,22 +26,26 @@ console.log(inputData)
 // b. 객체 objectData의 property인 key, "first", "second", "third"에 주문 a를 통해 얻은 데이터를 각각의 키(key)의 값으로 삽입(insert)하시오.
 
 
-const objectData = { 
-  first : 0, 
-  second : 0, 
-  third: 0
-};
+const objectData = new Object();
 
-// for (let key in objectData) {
-//   console.log(key);
-// }
-
-// 일일이 지정 X --> for in ??
 objectData.first = inputData[0]
 objectData.second = inputData[1]
 objectData.third = inputData[2] 
-
 console.log(objectData);
+
+// // 일일이 지정 X --> for in ??
+
 
 
 // c. objectData에 담긴 세 개의 난수 중 중앙값에 해당하는 값을 출력하시오.
+
+// const objectkey = Object.keys(objectData);
+// console.log(objectkey);
+
+
+const objectProperty = Object.keys(objectData).map(item => objectData[item]);
+// console.log(item => objectData[item])
+// console.log(objectProperty);
+
+let middle = Math.floor(objectProperty.length/2);
+console.log(objectProperty[middle]);
